@@ -25,7 +25,7 @@ _C.MODEL = CN()
 _C.MODEL.LOAD_PROPOSALS = False
 _C.MODEL.MASK_ON = False
 _C.MODEL.KEYPOINT_ON = False
-_C.MODEL.DEVICE = "cuda"
+_C.MODEL.DEVICE = "cpu"
 _C.MODEL.META_ARCHITECTURE = "GeneralizedRCNN"
 
 # Path (a file path, or URL like detectron2://.., https://..) to a checkpoint file
@@ -280,7 +280,7 @@ _C.MODEL.RPN.BOUNDARY_THRESH = -1
 _C.MODEL.RPN.IOU_THRESHOLDS = [0.3, 0.7]
 _C.MODEL.RPN.IOU_LABELS = [0, -1, 1]
 # Number of regions per image used to train RPN
-_C.MODEL.RPN.BATCH_SIZE_PER_IMAGE = 256
+_C.MODEL.RPN.BATCH_SIZE_PER_IMAGE = 2
 # Target fraction of foreground (positive) examples per RPN minibatch
 _C.MODEL.RPN.POSITIVE_FRACTION = 0.5
 # Options are: "smooth_l1", "giou"
@@ -328,7 +328,7 @@ _C.MODEL.ROI_HEADS.IOU_LABELS = [0, 1]
 # Total number of RoIs per training minibatch =
 #   ROI_HEADS.BATCH_SIZE_PER_IMAGE * SOLVER.IMS_PER_BATCH
 # E.g., a common configuration is: 512 * 16 = 8192
-_C.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 512
+_C.MODEL.ROI_HEADS.BATCH_SIZE_PER_IMAGE = 2
 # Target fraction of RoI minibatch that is labeled foreground (i.e. class > 0)
 _C.MODEL.ROI_HEADS.POSITIVE_FRACTION = 0.25
 

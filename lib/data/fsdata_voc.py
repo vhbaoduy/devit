@@ -48,13 +48,13 @@ def load_filtered_voc_instances(
                 os.path.join(dirname.replace('2007_2012', '2007'), "ImageSets", "Main", split + ".txt")
             ) as f:
                 fileids_2007 = np.loadtxt(f, dtype=np.str)
-            with PathManager.open(
-                os.path.join(dirname.replace('2007_2012', '2012'), "ImageSets", "Main", split + ".txt")
-            ) as f:
-                fileids_2012 = np.loadtxt(f, dtype=np.str)
+            # with PathManager.open(
+            #     os.path.join(dirname.replace('2007_2012', '2012'), "ImageSets", "Main", split + ".txt")
+            # ) as f:
+            #     fileids_2012 = np.loadtxt(f, dtype=np.str)
             fileids = []
             for f in fileids_2007: fileids.append((2007, f))
-            for f in fileids_2012: fileids.append((2012, f))
+            # for f in fileids_2012: fileids.append((2012, f))
         else:
             with PathManager.open(
                 os.path.join(dirname, "ImageSets", "Main", split + ".txt")
